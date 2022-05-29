@@ -18,7 +18,7 @@ app = FastAPI()
 
 @cachetools.func.ttl_cache(maxsize=None, ttl=3600)
 def get_trained_model():
-    response = requests.get('http://152.70.52.223:6100/decks').json()
+    response = requests.get('http://144.21.40.16:6100/decks').json()
     lst = []
     for archetype in response['archetypes']:
         lst.extend([(archetype['archetype_title'], ' '.join(map(str, x))) for x in archetype['decks']])
